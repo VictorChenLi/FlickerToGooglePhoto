@@ -56,7 +56,7 @@ class FlickrApiMethod(object):
 		if not parameters:
 			parameters = {}
 			
-		self.url = "http://api.flickr.com/services/rest"
+		self.url = "https://api.flickr.com/services/rest"
 		
 		defaults = {
 			'format':format,
@@ -85,7 +85,7 @@ class FlickrApiMethod(object):
 		resp, content = h.request(req.to_url(), "GET")
 		self.content = content
 		self.json = json.loads(content)
-		
+	
 		if self.json["stat"] == "ok":
 			return True
 		else:

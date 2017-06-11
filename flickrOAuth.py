@@ -35,7 +35,7 @@ params = {
     'oauth_timestamp': str(int(time.time())),
 	'oauth_signature_method':"HMAC-SHA1",
     'oauth_version': "1.0",
-	'oauth_callback': "http://www.mkelsey.com",
+	'oauth_callback': "http://www.example.com",
 	'oauth_nonce': oauth.generate_nonce(),
 	'oauth_consumer_key': keys.apikey
 }
@@ -112,6 +112,8 @@ resp, content = h.request(req.to_url(), "GET")
 
 #parse the response
 access_token_resp = dict(urlparse.parse_qsl(content))
+
+print(access_token_resp);
 
 #write out a file with the oauth_token and oauth_token_secret
 with open('token', 'w') as f:

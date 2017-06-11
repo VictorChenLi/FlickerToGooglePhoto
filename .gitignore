@@ -6,3 +6,4 @@ token
 .cache/
 *.xcworkspace
 *.pyc
+pictures/
